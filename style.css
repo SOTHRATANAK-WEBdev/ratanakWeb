@@ -1263,6 +1263,10 @@ img, video {
   }
 }
 
+/* =========================
+   FOOTER BASE
+========================= */
+
 /* Softer pulse for mobile */
 @keyframes neonPulseMobile {
   0% {
@@ -1270,5 +1274,67 @@ img, video {
   }
   100% {
     box-shadow: 0 0 10px #7c3aed;
+  }
+}
+
+.site-footer {
+  text-align: center;
+  padding: 30px 16px;
+  background: rgba(0, 0, 0, 0.2);
+ }
+
+.footer-line {
+  margin: 6px 0;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: #e5e7eb;
+  font-family: "Electrolize", sans-serif;
+}
+
+/* =========================
+   GLOW TEXT
+========================= */
+.footer-glow {
+  text-shadow:
+    0 0 6px rgba(56, 189, 248, 0.6),
+    0 0 12px rgba(56, 189, 248, 0.35);
+}
+
+/* Flag icon */
+.flag-icon {
+  width: 18px;
+  height: auto;
+  margin-left: 6px;
+  vertical-align: middle;
+  position: relative;
+  top: -2px; /* move flag slightly up */
+}
+
+.footer-flag {
+  filter:
+    drop-shadow(0 0 1px rgba(56, 191, 248, 0.414))
+    drop-shadow(0 0 1px rgba(56, 189, 248, 0.4));
+}
+
+/* =========================
+   DEV NAME
+========================= */
+.dev-name {
+  font-weight: 600;
+  font-family: "Electrolize", sans-serif;
+  color: #38bdf8;
+}
+
+/* =========================
+   MOBILE SAFE
+========================= */
+@media (max-width: 480px) {
+  .footer-line {
+    font-size: 8px;
+  }
+
+  .flag-icon {
+    width: 13px;
+    top: -0.5px;
   }
 }
