@@ -1335,7 +1335,8 @@ img, video {
 
   .flag-icon {
     width: 13px;
-    top: 2px;
-    left: -0.9px;
+    top: -0.5px;
+    left: -4px;
   }
 }
+
