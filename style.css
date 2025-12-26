@@ -736,17 +736,17 @@ body {
   font-weight: 600;
   margin-top: 20px;
   animation: bounceGlow 2s infinite;
-  text-shadow: 0 0 2px #38f87e, 0 0 6px #00ffaa, 0 0 12px #006aff;
+  text-shadow: 0 0 5px #38f87e, 0 0 10px #00ffaa, 0 0 15px #006aff;
 }
 
 @keyframes bounceGlow {
   0%, 100% {
     transform: translateY(0);
-    text-shadow: 0 0 2px #38f87e, 0 0 6px #00ffaa, 0 0 12px #006aff;
+    text-shadow: 0 0 5px #38f87e, 0 0 10px #00ffaa, 0 0 15px #006aff;
   }
   50% {
     transform: translateY(-5px);
-    text-shadow: 0 0 2px #38f87e, 0 0 6px #00ffaa, 0 0 12px #006aff;
+    text-shadow: 0 0 5px #38f87e, 0 0 10px #00ffaa, 0 0 15px #006aff;
   }
 }
 
