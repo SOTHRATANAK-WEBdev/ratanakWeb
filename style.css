@@ -207,20 +207,18 @@ body {
     font-weight: bold;
     font-size: 2.5rem;
     text-align: center;
-    top: 3px;
-    left: 7px;
-    background: linear-gradient(90deg, #44d0ff 0%, #ff00cc 25%, #ff65af 50%, #ff6262 75%, #00e1ff 100%);
-    background-size: 200% 100%;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    position: relative;
     font-family: "Fugaz One", sans-serif;
-    animation: colorSlide 3s linear infinite;
     display: inline-block;
+    color: #ff6262;
+    text-shadow: 0 0 5px #ffffff, 0 0 10px #ffffff, 0 0 15px #ffffff;
+    animation: fireIce 4s ease-in-out infinite;
 }
 
-@keyframes colorSlide {
-    0% { background-position: 0% 0%; }
-    100% { background-position: 200% 0%; }
+@keyframes fireIce {
+    0% { color: #ff6262; text-shadow: 0 0 10px #ff6262, 0 0 20px #ff00cc, 0 0 30px #44d0ff; }
+    50% { color: #00e1ff; text-shadow: 0 0 10px #00e1ff, 0 0 20px #44d0ff, 0 0 30px #ff6262; }
+    100% { color: #ff6262; text-shadow: 0 0 10px #ff6262, 0 0 20px #ff00cc, 0 0 30px #44d0ff; }
 }
 
 .profile-square {
