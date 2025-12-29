@@ -107,13 +107,22 @@ body {
 }
 
 @media (max-width: 600px) {
+
+    .navbar {
+        padding: 52px 0;        /* visual spacing */
+        min-height: 70px;      /* ⬅️ FORCE navbar height (THIS is the fix) */
+        justify-content: center;
+        align-items: center;
+    }
+
     .menu {
         gap: 14px;
+        justify-content: center;
     }
 
     .menu a {
         font-size: 13px;
-        padding: 5px 6px;
+        padding: 10px 6px;
     }
 
     .menu a i {
