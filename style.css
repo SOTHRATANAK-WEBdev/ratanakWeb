@@ -1043,7 +1043,7 @@ textarea:focus
     .menu a { font-size: 9px; gap: 4px;}
     .profile-square { 
         width: 400px; height: 220px; 
-        box-shadow: 5px 5px 1000px rgb(255, 0, 0); 
+        box-shadow: 5px 5px 1000px rgb(0, 0, 0); 
         animation: float 3s infinite ease-in-out;  }
     .section-title { font-size: 19px; }
     .activity { font-size: 13px; padding: 12px;}
