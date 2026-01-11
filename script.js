@@ -123,7 +123,7 @@ document.addEventListener("DOMContentLoaded", () => {
       musicPlayer.src = src;
       musicPlayer.play();
       isPlaying = true;
-      musicBtn.textContent = "STOP";
+      musicBtn.textContent = "OFF";
 
       // Hide list after selecting
       musicList.classList.remove("show");
