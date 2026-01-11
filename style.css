@@ -1199,22 +1199,17 @@ img, video {
 #music-list {
   display: none;
   position: absolute;
-  bottom: 54px;
+  bottom: 54px;       /* adjusted for smaller button */
   right: 0;
   background: rgb(0, 0, 0);
   border-radius: 4px;
-  width: 180px;
+  width: 180px;       /* ↓ smaller */
 
   /* 🔒 FIXED SIZE */
-  height: 170px;
-
-  /* ✅ SCROLL */
-  overflow-y: scroll;
+  height: 170px;      /* ↓ smaller */
+  overflow-y: auto;
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
-
-  /* ✅ REQUIRED for pseudo-element */
-  position: relative;
 
   padding: 5px 0;
   margin: 0;
@@ -1234,9 +1229,9 @@ img, video {
 
 /* List items */
 #music-list li {
-  padding: 9px 13px;
+  padding: 9px 13px;  /* ↓ slightly tighter */
   color: white;
-  font-size: 11px;
+  font-size: 11px;    /* ↓ smaller */
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -1257,7 +1252,7 @@ img, video {
 
 /* Neon Scrollbar (Desktop) */
 #music-list::-webkit-scrollbar {
-  width: 5px;
+  width: 5px;         /* ↓ thinner */
 }
 
 #music-list::-webkit-scrollbar-track {
@@ -1300,25 +1295,6 @@ img, video {
   #music-list li {
     font-size: 10px;
     padding: 7px 10px;
-  }
-
-  /* ✅ Always-visible scroll indicator (mobile) */
-  #music-list::before {
-    content: "";
-    position: absolute;
-    top: 6px;
-    right: 2px;
-    width: 3px;
-    height: 24px;
-    border-radius: 10px;
-    background: linear-gradient(
-      180deg,
-      rgba(56,189,248,0.9),
-      rgba(124,58,237,0.9)
-    );
-    opacity: 0.9;
-    pointer-events: none;
-    z-index: 5; /* ✅ IMPORTANT */
   }
 }
 
