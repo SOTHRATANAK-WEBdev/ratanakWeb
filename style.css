@@ -1157,18 +1157,18 @@ img, video {
 
 /* Small circular neon button */
 #music-btn {
-  width: 100px;
-  height: 50px;
-  border-radius: 5%; /* fully round */
+  width: 90px;        /* ↓ smaller */
+  height: 44px;       /* ↓ smaller */
+  border-radius: 5%;
   border: 2px solid rgba(255, 0, 162, 0.7);
   background: rgba(237, 36, 36, 0.164);
   color: #ffffff;
   font-weight: 700;
   cursor: pointer;
-  font-size: 11px;
+  font-size: 10px;    /* ↓ slightly smaller */
   backdrop-filter: blur(10px);
   font-family: "Electrolize", sans-serif;
-    box-shadow:
+  box-shadow:
     0 0 10px rgba(56,189,248,0.8),
     0 0 20px rgb(124, 58, 237),
     0 0 25px rgb(255, 106, 0);
@@ -1199,14 +1199,22 @@ img, video {
 #music-list {
   display: none;
   position: absolute;
-  bottom: 60px; /* above circular button */
+  bottom: 54px;       /* adjusted for smaller button */
   right: 0;
   background: rgb(0, 0, 0);
   border-radius: 4px;
-  width: 200px;
-  max-height: 200px;
+  width: 180px;       /* ↓ smaller */
+
+  /* 🔒 FIXED SIZE */
+  height: 170px;      /* ↓ smaller */
   overflow-y: auto;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+
   padding: 5px 0;
+  margin: 0;
+  list-style: none;
+
   box-shadow: 0 0 20px rgba(0, 255, 255, 0.751);
   transform: translateY(20px);
   opacity: 0;
@@ -1219,10 +1227,11 @@ img, video {
   opacity: 1;
 }
 
+/* List items */
 #music-list li {
-  padding: 10px 15px;
+  padding: 9px 13px;  /* ↓ slightly tighter */
   color: white;
-  font-size: 12px;
+  font-size: 11px;    /* ↓ smaller */
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -1230,7 +1239,6 @@ img, video {
   cursor: pointer;
   transition: background 0.3s;
 }
-
 
 #music-list li:hover {
   background: rgba(255, 0, 0, 0.614);
@@ -1241,6 +1249,25 @@ img, video {
   color: #fff;
   font-weight: 600;
 }
+
+/* Neon Scrollbar (Desktop) */
+#music-list::-webkit-scrollbar {
+  width: 5px;         /* ↓ thinner */
+}
+
+#music-list::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+#music-list::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #38bdf8, #7c3aed);
+  border-radius: 10px;
+}
+
+#music-list::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #7c3aed, #ff6a00);
+}
+
 /* ---------- Mobile Responsive ---------- */
 @media (max-width: 480px) {
   #music-container {
@@ -1249,28 +1276,28 @@ img, video {
   }
 
   #music-btn {
-    width: clamp(64px, 16vw, 88px);
-    height: clamp(36px, 9vw, 48px);
-    font-size: clamp(6px, 2.5vw, 11px);
+    width: 70px;
+    height: 38px;
+    font-size: 8px;
     border-width: 1.5px;
     border-radius: 5%;
     box-shadow:
       0 0 6px rgba(56,189,248,0.7),
       0 0 12px rgba(124,58,237,0.6);
-    animation: neonPulseMobile 2s infinite alternate;
   }
 
   #music-list {
-    width: 160px;
-    max-height: 160px;
-    bottom: 48px;
+    width: 145px;
+    height: 135px;
+    bottom: 44px;
   }
 
   #music-list li {
-    font-size: 11px;
-    padding: 8px 12px;
+    font-size: 10px;
+    padding: 7px 10px;
   }
 }
+
 
 /* =========================
    FOOTER BASE
