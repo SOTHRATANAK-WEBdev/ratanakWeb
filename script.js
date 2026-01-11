@@ -181,9 +181,19 @@ document.getElementById("nextProject").addEventListener("click", () => {
 // Load first project
 loadProject(currentProject);
 
-  // =========================
-// END PROJECT SLIDER LOGIC
-// =========================
+//=================================INTRO OVERLAY=====================================//
+    // Wait until the page is fully loaded
+window.addEventListener("load", () => {
+  const intro = document.getElementById("intro-screen");
 
+  // Show intro for 1.5 seconds, then hide it
+  setTimeout(() => {
+    if(intro) {
+      intro.classList.add("hide");
+    }
+  }, 1800); // 1500ms = 1.5 seconds
+});
+//=================================================================================//    
+    
 });
 typingEffect();
