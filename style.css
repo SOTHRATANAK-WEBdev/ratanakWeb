@@ -1406,6 +1406,7 @@ img, video {
 .intro-content h1 {
   font-size: 6vw; /* scales with screen width */
   max-font-size: 28px;
+  font-weight: 700;
   font-family: "Electrolize", sans-serif;
   letter-spacing: 0.5vw;
   margin-bottom: 12px;
