@@ -1481,6 +1481,7 @@ img, video {
   .intro-content h1 {
     font-size: 8vw; /* slightly larger on phones */
     letter-spacing: 1vw;
+    font-weight: bold;
   }
 
   .intro-content p {
