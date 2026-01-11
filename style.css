@@ -1400,25 +1400,27 @@ img, video {
   text-align: center;
   color: #38bdf8; /* neon color */
   font-family: "Electrolize", sans-serif;
-  animation: pulse 1.5s ease-in-out infinite alternate;
 }
 
 .intro-content h1 {
   font-size: 6vw; /* scales with screen width */
   max-font-size: 28px;
-  font-weight: 700;
   font-family: "Electrolize", sans-serif;
-  letter-spacing: 0.5vw;
+  letter-spacing: 0.4vw;
   margin-bottom: 12px;
+  font-weight: 700; /* bold */
   color: #38bdf8;
+  text-shadow: none; /* stable, no glow */
 }
 
 .intro-content p {
   font-size: 3.5vw; /* scales with screen width */
-  max-font-size: 12px;
-  opacity: 0.8;
+  max-font-size: 14px;
+  opacity: 0.9;
   font-family: "Electrolize", sans-serif;
+  font-weight: 700; /* bold */
   color: #ffffff;
+  text-shadow: none; /* stable, no glow */
   margin-top: 4px;
 }
 
@@ -1437,18 +1439,18 @@ img, video {
   position: relative;
 }
 
-/* The filling bar */
+/* The filling bar (animated download effect) */
 .loader::before {
   content: "";
   display: block;
   height: 100%;
   width: 0;
-  background: linear-gradient(90deg, #ff0000, #ff0000, #ff0000);
+  background: linear-gradient(90deg, #3aed7c, #38bdf8, #7c3aed);
   border-radius: 5px;
-  animation: downloadOnce 1.5s forwards; /* fill once */
+  animation: downloadOnce 1.5s forwards; /* ✅ animated fill */
 }
 
-/* Glow effect */
+/* Glow effect (static) */
 .loader::after {
   content: "";
   position: absolute;
@@ -1456,22 +1458,15 @@ img, video {
   left: 0;
   width: 100%;
   height: 100%;
-  box-shadow: 0 0 6px #000000, 0 0 10px #000000, 0 0 14px #000000;
+  box-shadow: 0 0 6px #3aed7c, 0 0 10px #38bdf8, 0 0 14px #7c3aed;
   border-radius: 5px;
   pointer-events: none;
 }
 
-/* Fill animation from 0 → 100% */
+/* Animate fill from 0 → 100% */
 @keyframes downloadOnce {
   0% { width: 0; }
   100% { width: 100%; }
-}
-
-/* Pulse animation for content */
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.03); }
-  100% { transform: scale(1); }
 }
 
 /* ------------------------------ */
@@ -1479,22 +1474,22 @@ img, video {
 /* ------------------------------ */
 @media (max-width: 480px) {
   .intro-content h1 {
-    font-size: 8vw; /* slightly larger on phones */
-    letter-spacing: 1vw;
-    font-weight: bold;
+    font-weight: 1000; /* bold */
+    font-size: 10vw;   /* slightly larger on phones */
+    letter-spacing: 0.2vw;
+    text-shadow: none; /* stable */
   }
 
   .intro-content p {
-    font-size: 14px;
+    font-size: 3.6vw;   /* readable on mobile */
   }
 
   .loader {
-    width: 90%;  /* nearly full screen width */
-    height: 6px; /* thin horizontal bar */
+    width: 90%;       /* nearly full screen width */
+    height: 6px;      /* thin horizontal bar */
   }
 
   .loader::after {
-    box-shadow: 0 0 4px #ff0000, 0 0 6px #ff0000, 0 0 8px #ff0000;
+    box-shadow: 0 0 4px #3aed7c, 0 0 6px #38bdf8, 0 0 8px #7c3aed;
   }
 }
-
