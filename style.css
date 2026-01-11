@@ -1411,9 +1411,9 @@ img, video {
   margin-bottom: 12px;
   color: #38bdf8;
   text-shadow:
-    0 0 5px #38bdf8,
-    0 0 10px #7c3aed,
-    0 0 15px #00ff91; /* multi-color glow */
+    0 0 4px #38bdf8,
+    0 0 3px #7c3aed,
+    0 0 2px #00ff91; /* multi-color glow */
 }
 
 .intro-content p {
@@ -1487,7 +1487,7 @@ img, video {
   }
 
   .intro-content p {
-    font-size: 4vw;
+    font-size: 14px;
   }
 
   .loader {
@@ -1496,6 +1496,7 @@ img, video {
   }
 
   .loader::after {
-    box-shadow: 0 0 4px #3aed7c, 0 0 6px #38bdf8, 0 0 8px #7c3aed;
+    box-shadow: 0 0 4px #ff0000, 0 0 6px #ff0000, 0 0 8px #ff0000;
   }
 }
+
