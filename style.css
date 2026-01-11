@@ -1208,11 +1208,13 @@ img, video {
   /* 🔒 FIXED SIZE */
   height: 170px;
 
-  /* ✅ ALWAYS VISIBLE SCROLLBAR */
+  /* ✅ SCROLL */
   overflow-y: scroll;
-
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
+
+  /* ✅ REQUIRED for pseudo-element */
+  position: relative;
 
   padding: 5px 0;
   margin: 0;
@@ -1232,9 +1234,9 @@ img, video {
 
 /* List items */
 #music-list li {
-  padding: 9px 13px;  /* ↓ slightly tighter */
+  padding: 9px 13px;
   color: white;
-  font-size: 11px;    /* ↓ smaller */
+  font-size: 11px;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
@@ -1255,7 +1257,7 @@ img, video {
 
 /* Neon Scrollbar (Desktop) */
 #music-list::-webkit-scrollbar {
-  width: 5px;         /* ↓ thinner */
+  width: 5px;
 }
 
 #music-list::-webkit-scrollbar-track {
@@ -1299,7 +1301,8 @@ img, video {
     font-size: 10px;
     padding: 7px 10px;
   }
-  /* Always-visible scroll indicator (mobile-friendly) */
+
+  /* ✅ Always-visible scroll indicator (mobile) */
   #music-list::before {
     content: "";
     position: absolute;
@@ -1309,15 +1312,15 @@ img, video {
     height: 24px;
     border-radius: 10px;
     background: linear-gradient(
-    180deg,
-    rgba(56,189,248,0.9),
-    rgba(124,58,237,0.9)
-  );
+      180deg,
+      rgba(56,189,248,0.9),
+      rgba(124,58,237,0.9)
+    );
     opacity: 0.9;
     pointer-events: none;
- }
+    z-index: 5; /* ✅ IMPORTANT */
+  }
 }
-
 
 /* =========================
    FOOTER BASE
