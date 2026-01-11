@@ -1299,6 +1299,23 @@ img, video {
     font-size: 10px;
     padding: 7px 10px;
   }
+  /* Always-visible scroll indicator (mobile-friendly) */
+  #music-list::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    right: 2px;
+    width: 3px;
+    height: 24px;
+    border-radius: 10px;
+    background: linear-gradient(
+    180deg,
+    rgba(56,189,248,0.9),
+    rgba(124,58,237,0.9)
+  );
+    opacity: 0.9;
+    pointer-events: none;
+ }
 }
 
 
