@@ -1410,10 +1410,6 @@ img, video {
   letter-spacing: 0.5vw;
   margin-bottom: 12px;
   color: #38bdf8;
-  text-shadow:
-    0 0 4px #38bdf8,
-    0 0 3px #7c3aed,
-    0 0 2px #00ff91; /* multi-color glow */
 }
 
 .intro-content p {
