@@ -1199,15 +1199,18 @@ img, video {
 #music-list {
   display: none;
   position: absolute;
-  bottom: 54px;       /* adjusted for smaller button */
+  bottom: 54px;
   right: 0;
   background: rgb(0, 0, 0);
   border-radius: 4px;
-  width: 180px;       /* ↓ smaller */
+  width: 180px;
 
   /* 🔒 FIXED SIZE */
-  height: 170px;      /* ↓ smaller */
-  overflow-y: auto;
+  height: 170px;
+
+  /* ✅ ALWAYS VISIBLE SCROLLBAR */
+  overflow-y: scroll;
+
   overscroll-behavior: contain;
   -webkit-overflow-scrolling: touch;
 
@@ -1296,28 +1299,12 @@ img, video {
     font-size: 10px;
     padding: 7px 10px;
   }
-  #music-list::after {
-    content: "";
-    position: sticky;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 16px;
-    pointer-events: none;
-    background: linear-gradient(
-    to top,
-    rgba(0, 255, 255, 0.35),
-    rgba(0, 0, 0, 0)
-  );
-}
-
 }
 
 
 /* =========================
    FOOTER BASE
 ========================= */
-
 /* Softer pulse for mobile */
 @keyframes neonPulseMobile {
   0% {
