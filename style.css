@@ -1405,33 +1405,46 @@ img, video {
 .intro-content h1 {
   font-size: 6vw; /* scales with screen width */
   max-font-size: 28px;
-  font-family: "Electrolize", sans-serif;
   letter-spacing: 0.4vw;
   margin-bottom: 12px;
-  font-weight: 700; /* bold */
+  font-weight: 700;
   color: #38bdf8;
-  text-shadow: none; /* stable, no glow */
+  font-family: "Electrolize", sans-serif;
+  text-shadow: none;
 }
 
 .intro-content p {
-  font-size: 3.5vw; /* scales with screen width */
+  font-size: 3.5vw;
   max-font-size: 14px;
   opacity: 0.9;
-  font-family: "Electrolize", sans-serif;
-  font-weight: 700; /* bold */
+  font-weight: 700;
   color: #ffffff;
-  text-shadow: none; /* stable, no glow */
+  font-family: "Electrolize", sans-serif;
+  text-shadow: none;
   margin-top: 4px;
+}
+/* -------- DOTs Animation --------*/
+.dots::after {
+  content: "";
+  animation: dotsAnim 1.5s steps(4, end) infinite;
+}
+
+@keyframes dotsAnim {
+  0%   { content: ""; }
+  25%  { content: "."; }
+  50%  { content: ".."; }
+  75%  { content: "..."; }
+  100% { content: ""; }
 }
 
 /* ------------------------------ */
-/* Neon download bar loader        */
+/* Neon download bar loader       */
 /* ------------------------------ */
 .loader {
-  width: 80%;        /* relative width for mobile-friendly */
-  max-width: 250px;  /* desktop cap */
-  height: 5vw;       /* scales with viewport width */
-  max-height: 8px;   /* desktop cap */
+  width: 80%;
+  max-width: 250px;
+  height: 5vw;
+  max-height: 8px;
   background: rgba(255,255,255,0.1);
   border-radius: 5px;
   margin: 20px auto 0;
@@ -1439,34 +1452,28 @@ img, video {
   position: relative;
 }
 
-/* The filling bar (animated download effect) */
 .loader::before {
   content: "";
   display: block;
   height: 100%;
   width: 0;
-  background: linear-gradient(90deg, #3aed7c, #38bdf8, #7c3aed);
+  background: linear-gradient(90deg, #ff0000, #ff0000, #ff0000);
   border-radius: 5px;
-  animation: downloadOnce 1.5s forwards; /* ✅ animated fill */
+  animation: downloadOnce 4s forwards;
 }
 
-/* Glow effect (static) */
 .loader::after {
   content: "";
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   box-shadow: 0 0 6px #3aed7c, 0 0 10px #38bdf8, 0 0 14px #7c3aed;
   border-radius: 5px;
   pointer-events: none;
 }
 
-/* Animate fill from 0 → 100% */
 @keyframes downloadOnce {
-  0% { width: 0; }
-  100% { width: 100%; }
+  from { width: 0; }
+  to { width: 100%; }
 }
 
 /* ------------------------------ */
@@ -1474,23 +1481,95 @@ img, video {
 /* ------------------------------ */
 @media (max-width: 480px) {
   .intro-content h1 {
-    font-weight: 1000; /* bold */
-    font-size: 10vw;   /* slightly larger on phones */
+    font-weight: 1000;
+    font-size: 10vw;
     letter-spacing: 0.2vw;
-    text-shadow: none; /* stable */
   }
 
   .intro-content p {
-    font-size: 3.6vw;   /* readable on mobile */
+    font-size: 3.6vw;
   }
 
   .loader {
-    width: 90%;       /* nearly full screen width */
-    height: 6px;      /* thin horizontal bar */
+    width: 90%;
+    height: 6px;
   }
 
   .loader::after {
-    box-shadow: 0 0 4px #3aed7c, 0 0 6px #38bdf8, 0 0 8px #7c3aed;
+    box-shadow: 0 0 4px #ffffff, 0 0 6px #ffffff, 0 0 8px #ffffff;
   }
 }
 
+/* ------------------------------ */
+/* Status text (PRANK STEPS)      */
+/* ------------------------------ */
+#status-text {
+  margin-top: 14px;
+  text-align: left;
+  max-width: 280px;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 12px;
+}
+
+.status-line {
+  display: none;              /* hidden by default */
+  align-items: center;
+  gap: 8px;
+  color: #9ca3af;
+  margin: 4px 0;
+  font-family: "Electrolize", sans-serif;
+  opacity: 0;
+  transform: translateX(-14px);
+}
+
+/* when JS shows a line */
+.status-line.show {
+  display: flex;
+  animation: slideInLeft 1s ease forwards;
+}
+
+/* slide-in animation */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-14px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Loading spinner */
+.icon.loading {
+  width: 10px;
+  height: 10px;
+  border: 2px solid #38bdf8;
+  border-top-color: transparent;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+/* Completed check */
+.icon.done {
+  width: 12px;
+  height: 12px;
+  animation: none;
+  border: none;
+  color: #58a91b;
+  font-weight: bold;
+  margin-top: -3px;
+}
+
+.icon.done::before {
+  content: "✓";
+}
+
+.status-line.done {
+  color: #5fc584;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
