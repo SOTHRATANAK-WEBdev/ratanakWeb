@@ -185,13 +185,37 @@ loadProject(currentProject);
     // Wait until the page is fully loaded
 window.addEventListener("load", () => {
   const intro = document.getElementById("intro-screen");
+  const lines = document.querySelectorAll(".status-line");
 
-  // Show intro for 1.5 seconds, then hide it
-  setTimeout(() => {
-    if(intro) {
-      intro.classList.add("hide");
+  let index = 0;
+  const stepDelay = 450;
+  const completeDelay = 450;
+
+  function runStep() {
+    if (index >= lines.length) {
+      setTimeout(() => {
+        intro.classList.add("hide");
+      }, 1000);
+      return;
     }
-  }, 2000); // 1500ms = 1.5 seconds
+
+    const line = lines[index];
+    const icon = line.querySelector(".icon");
+
+    // show line with slide animation
+    line.classList.add("show");
+
+    setTimeout(() => {
+      icon.classList.remove("loading");
+      icon.classList.add("done");
+      line.classList.add("done");
+
+      index++;
+      setTimeout(runStep, stepDelay);
+    }, completeDelay);
+  }
+
+  runStep();
 });
 //=================================================================================//    
     
