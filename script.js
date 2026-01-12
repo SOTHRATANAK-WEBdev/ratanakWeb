@@ -186,23 +186,12 @@ loadProject(currentProject);
 window.addEventListener("load", () => {
   const intro = document.getElementById("intro-screen");
 
-  // 🔒 Lock scroll immediately
-  document.documentElement.style.overflow = "hidden";
-  document.body.style.overflow = "hidden";
-
-  // Show intro for 2 seconds, then hide it
+  // Show intro for 1.5 seconds, then hide it
   setTimeout(() => {
-    if (intro) {
+    if(intro) {
       intro.classList.add("hide");
     }
-
-    // 🔓 Unlock scroll AFTER fade-out finishes
-    setTimeout(() => {
-      document.documentElement.style.overflow = "";
-      document.body.style.overflow = "";
-    }, 800); // match CSS transition duration
-
-  }, 2000);
+  }, 2000); // 1500ms = 1.5 seconds
 });
 //=================================================================================//    
     
