@@ -1553,17 +1553,35 @@ img, video {
 
 /* Completed check */
 .icon.done {
-  width: 12px;
-  height: 12px;
-  animation: none;
-  border: none;
-  color: #58a91b;
-  font-weight: bold;
-  margin-top: -3px;
+  position: relative;
+  width: 14px;
+  height: 10px;
 }
 
+.icon.done::before,
+.icon.done::after {
+  content: "";
+  position: absolute;
+  background-color: #a3ff5d;
+  border-radius: 2px;
+}
+
+/* short left arm */
 .icon.done::before {
-  content: "✓";
+  width: 4px;
+  height: 2px;
+  left: 3px;
+  top: 6px;
+  transform: rotate(45deg);
+}
+
+/* long right arm */
+.icon.done::after {
+  width: 10px;
+  height: 2px;
+  left: 4px;
+  top: 5px;
+  transform: rotate(-45deg);
 }
 
 .status-line.done {
