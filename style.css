@@ -1377,79 +1377,120 @@ img, video {
 /*======================================INTRO OVERLAY=======================================*/
 #intro-screen {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-
-  background: #000;
-
-  z-index: 999999; /* higher to be safe */
-
+  inset: 0;
+  background: rgb(0, 0, 0);
+  z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
-
-  /* 🔒 Prevent mobile weirdness */
-  overflow: hidden;
-  overscroll-behavior: none;
-
   transition: opacity 0.8s ease, visibility 0.8s ease;
+  padding: 0 15px; /* space for mobile */
 }
 
 /* Hide after preloader finishes */
 #intro-screen.hide {
   opacity: 0;
   visibility: hidden;
+}
+
+/* ------------------------------ */
+/* Intro content                  */
+/* ------------------------------ */
+.intro-content {
+  text-align: center;
+  color: #38bdf8; /* neon color */
+  font-family: "Electrolize", sans-serif;
+}
+
+.intro-content h1 {
+  font-size: 6vw; /* scales with screen width */
+  max-font-size: 28px;
+  font-family: "Electrolize", sans-serif;
+  letter-spacing: 0.4vw;
+  margin-bottom: 12px;
+  font-weight: 700; /* bold */
+  color: #38bdf8;
+  text-shadow: none; /* stable, no glow */
+}
+
+.intro-content p {
+  font-size: 3.5vw; /* scales with screen width */
+  max-font-size: 14px;
+  opacity: 0.9;
+  font-family: "Electrolize", sans-serif;
+  font-weight: 700; /* bold */
+  color: #ffffff;
+  text-shadow: none; /* stable, no glow */
+  margin-top: 4px;
+}
+
+/* ------------------------------ */
+/* Neon download bar loader        */
+/* ------------------------------ */
+.loader {
+  width: 80%;        /* relative width for mobile-friendly */
+  max-width: 250px;  /* desktop cap */
+  height: 5vw;       /* scales with viewport width */
+  max-height: 8px;   /* desktop cap */
+  background: rgba(255,255,255,0.1);
+  border-radius: 5px;
+  margin: 20px auto 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* The filling bar (animated download effect) */
+.loader::before {
+  content: "";
+  display: block;
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, #3aed7c, #38bdf8, #7c3aed);
+  border-radius: 5px;
+  animation: downloadOnce 1.5s forwards; /* ✅ animated fill */
+}
+
+/* Glow effect (static) */
+.loader::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 6px #3aed7c, 0 0 10px #38bdf8, 0 0 14px #7c3aed;
+  border-radius: 5px;
   pointer-events: none;
 }
 
+/* Animate fill from 0 → 100% */
+@keyframes downloadOnce {
+  0% { width: 0; }
+  100% { width: 100%; }
+}
+
 /* ------------------------------ */
-/* Code logo loader               */
+/* Mobile Adjustments             */
 /* ------------------------------ */
-.logo-loader {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.3em;
-  font-family: "Electrolize", monospace;
-  font-size: clamp(70px, 12vw, 80px);
-  font-weight: 700;
-  color: white;
-}
-
-/* Base state: invisible */
-.logo-loader span {
-  opacity: 0;
-  transform: scale(0.8);
-}
-
-/* < appears first */
-.logo-loader .left {
-  animation: drawIn 0.4s ease forwards;
-}
-
-/* > appears second */
-.logo-loader .right {
-  animation: drawIn 0.4s ease forwards;
-  animation-delay: 0.4s;
-}
-
-/* / appears last (center) */
-.logo-loader .slash {
-  position: absolute;
-  animation: drawIn 0.4s ease forwards;
-  animation-delay: 0.8s;
-}
-
-/* Drawing effect */
-@keyframes drawIn {
-  0% {
-    opacity: 0;
-    transform: scale(0.5);
+@media (max-width: 480px) {
+  .intro-content h1 {
+    font-weight: 1000; /* bold */
+    font-size: 10vw;   /* slightly larger on phones */
+    letter-spacing: 0.2vw;
+    text-shadow: none; /* stable */
   }
-  100% {
-    opacity: 1;
-    transform: scale(1);
+
+  .intro-content p {
+    font-size: 3.6vw;   /* readable on mobile */
+  }
+
+  .loader {
+    width: 90%;       /* nearly full screen width */
+    height: 6px;      /* thin horizontal bar */
+  }
+
+  .loader::after {
+    box-shadow: 0 0 4px #3aed7c, 0 0 6px #38bdf8, 0 0 8px #7c3aed;
   }
 }
+
