@@ -1403,14 +1403,34 @@ img, video {
 }
 
 .intro-content h1 {
-  font-size: 6vw; /* scales with screen width */
-  max-font-size: 28px;
-  letter-spacing: 0.4vw;
-  margin-bottom: 12px;
+  font-size: 6vw;
   font-weight: 700;
   color: #38bdf8;
   font-family: "Electrolize", sans-serif;
-  text-shadow: none;
+  letter-spacing: 0.4vw;
+
+  opacity: 0;
+  animation: hackerReveal 1.6s ease forwards;
+}
+
+@keyframes hackerReveal {
+  0% {
+    opacity: 0;
+    letter-spacing: 1vw;
+    text-shadow: 0 0 0 transparent;
+  }
+  40% {
+    opacity: 1;
+    text-shadow: 0 0 8px #38bdf8;
+  }
+  60% {
+    letter-spacing: 0.8vw;
+  }
+  100% {
+    opacity: 1;
+    letter-spacing: 0.4vw;
+    text-shadow: 0 0 12px #38bdf8;
+  }
 }
 
 .intro-content p {
