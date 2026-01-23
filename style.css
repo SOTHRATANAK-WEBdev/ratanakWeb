@@ -1408,28 +1408,44 @@ img, video {
   color: #38bdf8;
   font-family: "Electrolize", sans-serif;
   letter-spacing: 0.4vw;
-
   opacity: 0;
+  transform: scale(0.9);
+  will-change: transform, opacity;
+  /* default glow (desktop) */
+  text-shadow:
+    0 0 6px #38bdf8,
+    0 0 14px rgba(56, 189, 248, 0.8);
   animation: hackerReveal 1.6s ease forwards;
 }
-
+/* Animation */
 @keyframes hackerReveal {
   0% {
     opacity: 0;
+    transform: scale(0.7);
     letter-spacing: 1vw;
-    text-shadow: 0 0 0 transparent;
+    text-shadow: none;
   }
   40% {
     opacity: 1;
-    text-shadow: 0 0 8px #38bdf8;
-  }
-  60% {
-    letter-spacing: 0.8vw;
+    transform: scale(1.05);
+    text-shadow:
+      0 0 6px #38bdf8,
+      0 0 10px rgba(56, 189, 248, 0.7);
   }
   100% {
     opacity: 1;
+    transform: scale(1);
     letter-spacing: 0.4vw;
-    text-shadow: 0 0 12px #38bdf8;
+    text-shadow:
+      0 0 6px #38bdf8,
+      0 0 14px rgba(56, 189, 248, 0.8);
+  }
+}
+@media (max-width: 768px) {
+  .intro-content h1 {
+    text-shadow:
+      0 0 3px rgba(56, 189, 248, 0.6),
+      0 0 6px rgba(56, 189, 248, 0.5);
   }
 }
 
