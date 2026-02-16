@@ -188,7 +188,7 @@ window.addEventListener("load", () => {
   const lines = document.querySelectorAll(".status-line");
 
   let index = 0;
-  const stepDelay = 450;
+  const stepDelay = 500;
   const completeDelay = 450;
 
   function runStep() {
