@@ -194,7 +194,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.700); /* dark overlay for readability */
+    background: rgba(0, 0, 0, 0.456); /* dark overlay for readability */
     z-index: 0;
 }
 
