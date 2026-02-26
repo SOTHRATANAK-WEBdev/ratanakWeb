@@ -1617,3 +1617,9 @@ img, video {
 @keyframes spin {
   to { transform: rotate(360deg); }
 }
+/* Phone Rotation orienttation */
+@media screen and (orientation: landscape) and (max-width: 900px) {
+  .project-item {
+    grid-template-columns: 1.2fr 1fr;
+  }
+}
