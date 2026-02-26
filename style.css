@@ -131,7 +131,7 @@ body {
 }
 
 .hero {
-    background: url('img/gif98.gif') center / cover no-repeat;
+    background: url('img/anime68.gif') center / cover no-repeat;
     position: relative;
     width: 100%;
     min-height: 100vh;
@@ -194,7 +194,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.456); /* dark overlay for readability */
+    background: rgba(0, 0, 0, 0.511); /* dark overlay for readability */
     z-index: 0;
 }
 
