@@ -217,27 +217,7 @@ window.addEventListener("load", () => {
 
   runStep();
 });
-//===================================BG GIFS=================================//
-const hero = document.querySelector(".hero");
 
-const backgrounds = [
-    "img/anime68.gif",
-    "img/gif29.gif",
-    "img/gif45.gif",
-    "img/gif56.gif",
-    "img/gif88.gif"
-];
-
-let index = 0;
-
-function changeBackground() {
-    index = (index + 1) % backgrounds.length;
-    hero.style.backgroundImage = `url(${backgrounds[index]})`;
-}
-
-hero.style.backgroundImage = `url(${backgrounds[0]})`;
-
-setInterval(changeBackground, 3000);
 //=================================================================================//    
     
 });
