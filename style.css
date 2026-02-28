@@ -131,11 +131,14 @@ body {
 }
 
 .hero {
-    background: url('img/anime68.gif') center / cover no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     position: relative;
     width: 100%;
     min-height: 100vh;
-    overflow: hidden; /* keep glow clean */
+    overflow: hidden;
+    transition: background-image 0.8s ease-in-out;
 }
 
 /* animated glowing bottom line */
@@ -194,7 +197,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.511); /* dark overlay for readability */
+    background: rgba(0, 0, 0, 0.565); /* dark overlay for readability */
     z-index: 0;
 }
 
